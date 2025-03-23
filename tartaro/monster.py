@@ -1,7 +1,7 @@
 class Monster:
     def __init__(self, level, especie, class_):
         self.name = ""
-        self.level = level
+        self.level = int(level)
         self.especie = especie
         self.class_ = class_
         self.attribute = {"strength": 0, "inteligence": 0, "dexterity": 0, "speed": 0, "vitality": 0}
@@ -19,4 +19,4 @@ class Monster:
         self.defense = (self.attribute["vitality"] + self.attribute["speed"]) * 2 + self.level
 
     def __str__(self):
-        return f'{self.name} ({self.especie}), {self.level}'
+        return f'{self.name} ({self.especie}), {self.level}\n HP: {self.hp}, MP: {self.mp}\n ATK: {self.attack}, DEF: {self.defense}\n Skills: {", ".join(self.skills)}'
