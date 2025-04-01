@@ -1,8 +1,16 @@
-from monster import Monster
-
-class Equidna(Monster):
-    def __init__(self, level, especie, class_):
-        super().__init__(level, especie, class_)
+class Equidna:
+    def __init__(self, especie, class_, level):
+        self.name = ""
+        self.level = int(level)
+        self.especie = especie
+        self.class_ = class_
+        self.attribute = {"strength": 0, "inteligence": 0, "dexterity": 0, "speed": 0, "vitality": 0}
+        self.hp = 0 
+        self.mp = 0 
+        self.attack = 0 
+        self.defense = 0 
+        self.skills = []
+        self.items = []
 
     modifiers = { "Beast": [2, 1, 0, 3, 3], "Demon": [1, 2, 3, 2, 1], "Dragon": [8, 5, 4, 6, 8],
                   "Elemental": [1, 3, 2, 1, 2], "Fairy": [0, 3, 3, 2, 1], "Human": [2, 2, 2, 2, 2],
@@ -29,8 +37,6 @@ class Equidna(Monster):
             monster.set_items(cls.items_list)
         return horde
 
-
-
     def apply_especie_modifiers(self, modifiers, grown_factor):
         for key, value in modifiers.items():
             if key == self.especie:
@@ -49,9 +55,17 @@ class Equidna(Monster):
                 self.skills = value
                 break
     
-
     def set_items(self, items_list):
         for key, value in items_list.items():
             if key == self.especie:
                 self.items = value
                 break
+
+    def update_stats(self):
+        self.hp = 10 * (self.attribute["vitality"] + self.level)
+        self.mp = 10 * (self.attribute["inteligence"] + self.level)
+        self.attack = (self.attribute["strength"] + self.attribute["dexterity"]) * 2 + self.level
+        self.defense = (self.attribute["vitality"] + self.attribute["speed"]) * 2 + self.level
+
+    def __str__(self):
+        return f'{self.name} ({self.especie}), {self.level}\n HP: {self.hp}, MP: {self.mp}\n ATK: {self.attack}, DEF: {self.defense}\n Skills: {", ".join(self.skills)}'

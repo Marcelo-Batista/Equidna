@@ -1,27 +1,28 @@
-# package_name
+# tartaro
 
-Description. 
-The package package_name is used to:
-	- 
-	-
+Description.
+The package tartaro is used to: - creation of list with monsters for basics adventures of RPG
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install package_name
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install tartaro
 
 ```bash
-pip install package_name
+pip install tartaro
 ```
 
 ## Usage
 
 ```python
-from package_name import file1_name
-file1_name.my_function()
+from tartaro import equidna
+equidna = Equidna("Equidna", "Equidna", 0)
+horde1 = equidna.create_horde("Beast", "Beast", 1, 2, 5, 10)
 ```
 
 ## Author
-My_name
+
+[Marcelo Batista](https://github.com/Marcelo-Batista)
 
 ## License
+
 [MIT](https://choosealicense.com/licenses/mit/)
