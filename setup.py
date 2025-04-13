@@ -6,6 +6,8 @@ with open("README.md", "r") as f:
 with open("requirements.txt") as f:
     requirements = f.read().splitlines()
 
+
+
 setup(
     name="rpgFactory",
     version="0.0.2",
