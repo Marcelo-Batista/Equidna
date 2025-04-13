@@ -8,7 +8,7 @@ with open("requirements.txt") as f:
 
 setup(
     name="rpgFactory",
-    version="0.0.1",
+    version="0.0.2",
     author="Marcelo Batista",
     author_email="marcelo.silva238@fatec.sp.gov.br",
     description="A simple RPG factory to create monsters",
